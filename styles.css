@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Noto%20Sans%20Old%20Hungarian:700|Noto%20Sans%20Old%20Hungarian:400');
+/* 
+text: #ecf2d9;
+background: #101405;
+primary: #cfe684;
+secondary: #6f8b13;
+accent: #c1ef2a; */
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+body {
+  font-family: 'Noto Sans Old Hungarian';
+  font-weight: 400;
+}
+/* Passcode design */
+.login-container {
+  background-color: #101405;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login {
+  background-color: #363e1e;
+
+  border-radius: 0.5em;
+  color: #ecf2d9;
+  padding: 20px;
+  text-align: center;
+  width: 50%;
+  min-width: 300px;
+  position: relative;
+}
+.login .wrong {
+  opacity: 100%;
+}
+
+.wrong-password {
+  background-color: rgba(251, 0, 0, 0.534);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 110%;
+  width: 50%;
+  min-width: 190px;
+  color: rgb(57, 1, 1);
+  border-radius: 0.5em;
+  padding: 2px;
+  opacity: 0%;
+  transition: all ease 200ms;
+}
+
+.login p {
+  font-weight: 600;
+  font-size: 30px;
+}
+.login input[type='password'] {
+  appearance: none;
+  background-color: #101405;
+  width: 50%;
+  color: #ffffff;
+  outline: none;
+  padding: 5px;
+  border-radius: 0.5em;
+  margin-bottom: 1vw;
+}
+.login input[type='password']:focus {
+  border: 2px solid #6f8b13;
+}
+.login input[type='submit'] {
+  padding: 3px 8px;
+  background-color: #cfe684;
+  color: #101405;
+  border: 1px solid #cfe684;
+  border-radius: 0.5em;
+  transition: all ease 200ms;
+}
+.login input[type='submit']:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.login input[type='submit']:active {
+  transform: scale(0.95);
+  background-color: rgb(164, 182, 105);
+  transition: all ease 0ms;
+}
