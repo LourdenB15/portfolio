@@ -12,14 +12,14 @@ html {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   /* border: 1px solid red; */
 }
 body {
   font-family: 'Noto Sans Old Hungarian';
   font-weight: 400;
 }
-/* Passcode design */
+/* ------Passcode design------ */
 .login-container {
   background-color: #101405;
   height: 100vh;
@@ -90,4 +90,76 @@ body {
   transform: scale(0.95);
   background-color: rgb(164, 182, 105);
   transition: all ease 0ms;
+}
+
+/* ------nav------  */
+
+.container {
+  background-color: #101405;
+  color: #ecf2d9;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5vw 5%;
+  border-bottom: 1px solid #ffffff1a;
+}
+nav span {
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 0.1em;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+}
+
+nav li {
+  display: inline-block;
+  font-size: 18px;
+}
+
+nav a {
+  color: #ecf2d9;
+  text-decoration: none;
+  transition: all ease 200ms;
+}
+nav a:hover {
+  opacity: 0.6;
+}
+
+/* ------about------  */
+section {
+  padding: 0 10%;
+}
+.img {
+  width: 300px;
+  height: auto;
+  background: linear-gradient(120deg, #cfe684, #c1ef2a);
+}
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#about {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5vw;
+}
+.intro {
+  flex: 1;
+  min-width: 270px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
