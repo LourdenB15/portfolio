@@ -163,3 +163,45 @@ section {
   flex-direction: column;
   gap: 20px;
 }
+
+section:not(#about) {
+  padding-bottom: 4.5vw;
+}
+
+/* ------Education------  */
+.section-head {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4.5vw;
+}
+
+.section-content {
+  display: flex;
+  gap: 5vw;
+  justify-content: center;
+}
+
+.section-content > div p:first-child {
+  margin-bottom: 1.5em;
+  font-weight: 600;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.section-content > div {
+  border-radius: 1em;
+  font-size: 16px;
+  flex: 1;
+  padding: 2%;
+  background-color: #6f8b132d;
+}
+
+.section-content > div:nth-of-type(2) {
+  background-color: #cfe68446;
+}
+
+.section-content .year {
+  font-size: 14px;
+}
+/* ------Skill------ */
