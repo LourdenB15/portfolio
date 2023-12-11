@@ -180,6 +180,7 @@ section:not(#about) {
   display: flex;
   gap: 5vw;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .section-content > div p:first-child {
@@ -193,8 +194,12 @@ section:not(#about) {
   border-radius: 1em;
   font-size: 16px;
   flex: 1;
-  padding: 2%;
+  padding: 1em;
   background-color: #6f8b132d;
+  min-width: 220px;
+
+  max-width: 505px;
+  /* min-width: 380px; */
 }
 
 .section-content > div:nth-of-type(2) {
@@ -205,3 +210,34 @@ section:not(#about) {
   font-size: 14px;
 }
 /* ------Skill------ */
+
+.tools {
+  display: flex;
+  gap: 5vw;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tech-stack {
+  background-color: #6f8b1349;
+  padding: 1em;
+  border-radius: 1em;
+  flex: 1;
+  max-width: 505px;
+  min-width: 380px;
+}
+
+.tools .tool-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tools .tool-wrapper > * {
+  width: auto;
+  height: 100px;
+}
+
+.tools img {
+  height: 100%;
+}
