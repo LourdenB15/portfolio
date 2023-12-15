@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Denious</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <span>Denious</span>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skill">Skill</a></li>
+            <li><a href="#fave">Fave</a></li>
+            <li><a href="#project">Projects</a></li>
+            <li>
+              <a onclick="logout()" href="#"
+                ><i class="fa-solid fa-power-off"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+        <section id="about">
+          <div class="wrapper">
+            <div class="img"><img src="images/den-p.png" alt="Denious" /></div>
+            <div class="intro">
+              <h1>Den</h1>
+              <h3>"An Aspiring Web Developer"</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deserunt ipsam sit deleniti quam optio dicta possimus itaque
+                fugit, voluptas error atque provident nesciunt eveniet eos
+                repellendus et magnam, eaque officiis.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                explicabo esse at in, libero voluptatem aliquid, quis, obcaecati
+                nulla architecto laborum corporis praesentium
+              </p>
+            </div>
+          </div>
+        </section>
+      </header>
+      <section id="education">
+        <p class="section-head">Education</p>
+        <div class="section-content">
+          <div>
+            <p>Primary</p>
+            <p>Lapu-Lapu City Central Elementary School</p>
+            <p class="year">2007-2013</p>
+          </div>
+          <div>
+            <p>Tertiary</p>
+            <p>Cordova Public College</p>
+            <p>Taking BSIT</p>
+            <p class="year">2023-Present</p>
+          </div>
+          <div>
+            <p>Secondary</p>
+            <p>Poblacion Night High School</p>
+            <p class="year">2013-2017</p>
+            <p>Asian Learning Center</p>
+            <p class="year">2017-2019</p>
+          </div>
+        </div>
+      </section>
+      <section id="skill">
+        <p class="section-head">Skill</p>
+        <div class="tools">
+          <div class="tech-stack">
+            <div class="section-subhead">Tech stack</div>
+            <div class="tool-wrapper">
+              <div><img src="logo/html.png" alt="html" /></div>
+              <div><img src="logo/css.png" alt="css" /></div>
+              <div><img src="logo/js.png" alt="javascript" /></div>
+            </div>
+          </div>
+          <div class="tech-stack">
+            <div class="section-subhead">Tools</div>
+            <div class="tool-wrapper">
+              <div><img src="logo/git.png" alt="html" /></div>
+              <div><img src="logo/github.png" alt="css" /></div>
+              <div><img src="logo/vscode.png" alt="javascript" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="fave">
+        <p class="section-head">Fave</p>
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/ucYVEl4nWSI"
+          frameborder="0"
+        ></iframe>
+      </section>
+      <section id="project">
+        <p class="section-head">Projects</p>
+      </section>
+    </div>
+    <script>
+      function logout() {
+        window.location.href = 'index.html';
+      }
+    </script>
+  </body>
+</html>
