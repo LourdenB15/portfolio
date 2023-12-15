@@ -60,6 +60,7 @@ body {
 .login p {
   font-weight: 600;
   font-size: 30px;
+  text-align: center;
 }
 .login input[type='password'] {
   appearance: none;
@@ -258,6 +259,22 @@ section:not(#about) {
   min-width: 380px;
 }
 
+/* Project */
+
+#project {
+  text-align: center;
+}
+#project .calcu {
+  width: 100%;
+}
+
+#project img {
+  border-radius: 5%;
+  width: 100%;
+  height: 100%;
+  max-width: 390px;
+  /* object-fit: cover; */
+}
 /* ------Media Query------ */
 
 @media (max-width: 700px) {
