@@ -1,6 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import { SKILLS } from "@/constants/skills";
 
 export default function SkillSection() {
+  const [selected, setSelected] = useState<string | null>(null);
+
+  function toggle(name: string) {
+    setSelected((prev) => (prev === name ? null : name));
+  }
+
   return (
     <section className="px-5 sm:px-10 md:px-16 py-12">
       <div className="text-4xl font-bold text-center mb-8">Skills</div>
@@ -12,7 +21,12 @@ export default function SkillSection() {
               {skill.items.map((item) => (
                 <span
                   key={item.name}
-                  className="flex items-center gap-2 border border-[#212807] rounded-full px-4 py-1 text-sm"
+                  onClick={() => toggle(item.name)}
+                  className={`flex items-center gap-2 border border-[#212807] rounded-full px-4 py-1 text-sm cursor-pointer duration-200 ${
+                    selected === item.name
+                      ? "bg-[#212807] text-[#EBF2D9]"
+                      : "hover:bg-[#212807]/50"
+                  }`}
                 >
                   {item.icon}
                   {item.name}
