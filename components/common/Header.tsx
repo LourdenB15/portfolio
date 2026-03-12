@@ -9,7 +9,7 @@ export default function Header() {
 
     return (
         <header>
-            <nav className="flex justify-between px-16 py-5 border-b border-[#282C1D]">
+            <nav className="flex justify-between px-5 sm:px-10 md:px-16 py-5 border-b border-[#282C1D]">
                 <Link className="text-3xl font-bold" href="/">Denious</Link>
 
                 <div className="hidden sm:flex gap-5 items-center">
@@ -29,7 +29,7 @@ export default function Header() {
             </nav>
 
             {open && (
-                <div className="sm:hidden flex flex-col px-16 py-4 gap-4 border-b border-[#282C1D]">
+                <div className="sm:hidden flex flex-col px-5 sm:px-10 md:px-16 py-4 gap-4 border-b border-[#282C1D]">
                     <Link href="/" onClick={() => setOpen(false)}>About</Link>
                     <Link href="/education" onClick={() => setOpen(false)}>Education</Link>
                     <div>Gallery</div>
