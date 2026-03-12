@@ -18,14 +18,13 @@ export default function HeroSection() {
           <div className="flex flex-col gap-5 justify-center basis-[300px] grow mb-5 sm:mb-0 max-w-md pl-5">
             <div className="font-bold text-lg">Hi, I&apos;m Den!</div>
             <div>
-              A 3rd year BS Information Technology student passionate about
-              building things for the web. I&apos;m currently leveling up my
-              skills in modern technologies and turning ideas into real, working
+              A 3rd year BS Information Technology student who builds for the
+              web. I pick up new tools as I go and turn ideas into working
               projects.
             </div>
             <div>
-              Welcome to my portfolio! A space where I share what I&apos;ve
-              built, what I&apos;ve learned, and where I&apos;m headed.
+              This is where I share what I&apos;ve built and what I&apos;m
+              learning.
             </div>
           </div>
         </div>
