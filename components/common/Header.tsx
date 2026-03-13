@@ -18,7 +18,7 @@ export default function Header() {
           <Link href="/">About</Link>
           <Link href="/education">Education</Link>
           <div>Gallery</div>
-          <div>Projects</div>
+          <Link href="/projects">Projects</Link>
         </div>
 
         <button
@@ -39,7 +39,7 @@ export default function Header() {
             Education
           </Link>
           <div>Gallery</div>
-          <div>Projects</div>
+          <Link href="/projects" onClick={() => setOpen(false)}>Projects</Link>
         </div>
       )}
     </header>
