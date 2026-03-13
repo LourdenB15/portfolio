@@ -10,7 +10,7 @@ export default function Footer() {
 
       <div className="flex gap-5 items-center">
         <Link
-          href="https://github.com"
+          href="https://github.com/LourdenB15"
           target="_blank"
           aria-label="GitHub"
           className="hover:text-[#EBF2D9] transition-colors"

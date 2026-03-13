@@ -1,10 +1,10 @@
 import Image from "next/image";
+import Section from "@/components/common/Section";
 
 export default function HeroSection() {
   return (
-    <>
-      <section className="px-5 min-h-[calc(100vh-72px)] sm:px-10 md:px-16 grow flex justify-center items-center mt-7 md:mt-0">
-        <div className="flex gap-5 flex-wrap justify-center">
+    <Section className="grow flex justify-center items-center">
+      <div className="flex gap-5 flex-wrap justify-center">
           <div className="overflow-hidden rounded-lg basis-[300px] grow-1 max-w-md">
             <Image
               src="/cscat.jpeg"
@@ -28,7 +28,6 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-      </section>
-    </>
+    </Section>
   );
 }

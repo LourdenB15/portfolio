@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SKILLS } from "@/constants/skills";
+import Section from "@/components/common/Section";
 
 export default function SkillSection() {
   const [selected, setSelected] = useState<string | null>(null);
@@ -11,7 +12,7 @@ export default function SkillSection() {
   }
 
   return (
-    <section className="px-5 sm:px-10 md:px-16 py-12">
+    <Section>
       <div className="text-4xl font-bold text-center mb-8">Skills</div>
       <div className="flex flex-col gap-6 max-w-2xl mx-auto">
         {SKILLS.map((skill) => (
@@ -36,6 +37,6 @@ export default function SkillSection() {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }
