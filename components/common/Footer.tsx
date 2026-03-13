@@ -25,9 +25,13 @@ export default function Footer() {
         >
           <Facebook size={18} />
         </Link>
-        <span className="cursor-pointer hover:text-[#EBF2D9] transition-colors">
+        <Link
+          href="mailto:lourdenbaydal13@gmail.com"
+          aria-label="Email"
+          className="hover:text-[#EBF2D9] transition-colors"
+        >
           <Mail size={18} />
-        </span>
+        </Link>
       </div>
     </footer>
   );

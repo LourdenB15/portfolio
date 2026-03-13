@@ -17,8 +17,8 @@ export default function Header() {
         <div className="hidden sm:flex gap-5 items-center">
           <Link href="/">About</Link>
           <Link href="/education">Education</Link>
-          <div>Gallery</div>
           <Link href="/projects">Projects</Link>
+          <Link href="/contact">Contact</Link>
         </div>
 
         <button
@@ -38,8 +38,12 @@ export default function Header() {
           <Link href="/education" onClick={() => setOpen(false)}>
             Education
           </Link>
-          <div>Gallery</div>
-          <Link href="/projects" onClick={() => setOpen(false)}>Projects</Link>
+          <Link href="/contact" onClick={() => setOpen(false)}>
+            Contact
+          </Link>
+          <Link href="/projects" onClick={() => setOpen(false)}>
+            Projects
+          </Link>
         </div>
       )}
     </header>
