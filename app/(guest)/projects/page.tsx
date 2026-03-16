@@ -1,16 +1,42 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Section from "@/components/common/Section";
 import { PROJECTS } from "@/constants/projects";
-import { FaGithub } from "react-icons/fa";
+import { SiGithub } from "react-icons/si";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
+import { Search } from "lucide-react";
+import { useState } from "react";
 
 export default function ProjectsPage() {
+  const [input, setInput] = useState("");
+  function handleInput(value: string) {
+    setInput(value.toLowerCase());
+  }
   return (
-    <>
-      <Section>
-        <div className="text-4xl font-bold text-center mb-8">Projects</div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {PROJECTS.map((project) => (
+    <Section className="grow">
+      <div className="text-4xl font-bold text-center mb-8">Projects</div>
+      <div className="flex flex-col  max-w-5xl mx-auto">
+        <InputGroup className="md:max-w-xs self-end mb-6">
+          <InputGroupInput
+            placeholder="Search..."
+            onChange={(e) => handleInput(e.target.value)}
+          />
+          <InputGroupAddon>
+            <Search />
+          </InputGroupAddon>
+        </InputGroup>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {PROJECTS.filter(
+            (project) =>
+              project.name.toLowerCase().includes(input) ||
+              project.description.toLowerCase().includes(input),
+          ).map((project) => (
             <div
               key={project.id}
               className="relative border border-[#212807] rounded-lg overflow-hidden flex flex-col hover:bg-[#212807]/40 transition-colors"
@@ -54,14 +80,14 @@ export default function ProjectsPage() {
                   target="_blank"
                   className="flex items-center gap-2 text-sm opacity-60 hover:opacity-100 transition-opacity mt-1 w-fit"
                 >
-                  <FaGithub size={16} />
+                  <SiGithub size={16} />
                   View code on GitHub
                 </Link>
               </div>
             </div>
           ))}
         </div>
-      </Section>
-    </>
+      </div>
+    </Section>
   );
 }

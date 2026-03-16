@@ -21,10 +21,9 @@ export default function ContactForm() {
     "w-full bg-transparent border border-[#212807] rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#EBF2D9]/40 transition-colors placeholder:opacity-40";
 
   return (
-    <Section>
+    <Section className="grow">
       <div className="max-w-xl mx-auto flex flex-col gap-6">
         <div className="text-4xl font-bold text-center">Send a Message</div>
-
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div className="flex flex-col gap-1.5">
             <label htmlFor="name" className="text-sm opacity-70">

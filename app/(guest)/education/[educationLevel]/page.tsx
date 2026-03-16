@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Header from "@/components/common/Header";
 import { EDUCATION } from "@/constants/education";
 import { MoveLeft } from "lucide-react";
-import Footer from "@/components/common/Footer";
+import Section from "@/components/common/Section";
 
 export default async function EducationLevel({
   params,
@@ -20,8 +19,7 @@ export default async function EducationLevel({
 
   return (
     <>
-      <Header />
-      <section className="px-16 grow flex justify-center mt-8">
+      <Section className="grow flex justify-center mt-8">
         <div className="w-full max-w-md">
           <Link
             href="/education"
@@ -44,8 +42,7 @@ export default async function EducationLevel({
             ))}
           </div>
         </div>
-      </section>
-      <Footer />
+      </Section>
     </>
   );
 }
