@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Header from "@/components/common/Header";
-import Footer from "@/components/common/Footer";
 import Section from "@/components/common/Section";
 import { PROJECTS } from "@/constants/projects";
 import { FaGithub } from "react-icons/fa";
@@ -9,7 +7,6 @@ import { FaGithub } from "react-icons/fa";
 export default function ProjectsPage() {
   return (
     <>
-      <Header />
       <Section>
         <div className="text-4xl font-bold text-center mb-8">Projects</div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -18,7 +15,12 @@ export default function ProjectsPage() {
               key={project.id}
               className="relative border border-[#212807] rounded-lg overflow-hidden flex flex-col hover:bg-[#212807]/40 transition-colors"
             >
-              <Link href={project.link} target="_blank" className="absolute inset-0 z-0" aria-label={project.name} />
+              <Link
+                href={project.link}
+                target="_blank"
+                className="absolute inset-0 z-0"
+                aria-label={project.name}
+              />
 
               <div className="overflow-hidden">
                 <Image
@@ -32,7 +34,9 @@ export default function ProjectsPage() {
 
               <div className="relative z-10 p-5 flex flex-col gap-3 grow">
                 <div className="font-bold text-lg">{project.name}</div>
-                <div className="text-sm opacity-70 grow">{project.description}</div>
+                <div className="text-sm opacity-70 grow">
+                  {project.description}
+                </div>
 
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
@@ -58,7 +62,6 @@ export default function ProjectsPage() {
           ))}
         </div>
       </Section>
-      <Footer />
     </>
   );
 }

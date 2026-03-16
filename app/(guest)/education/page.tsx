@@ -1,12 +1,9 @@
 import Link from "next/link";
-import Header from "@/components/common/Header";
 import { EDUCATION } from "@/constants/education";
-import Footer from "@/components/common/Footer";
 
 export default function EducationPage() {
   return (
     <>
-      <Header />
       <section className="px-16 grow flex justify-center mt-8">
         <div>
           <div className="text-4xl font-bold text-center mb-5">Education</div>
@@ -32,7 +29,6 @@ export default function EducationPage() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }
