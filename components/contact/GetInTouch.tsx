@@ -34,7 +34,7 @@ export default function GetInTouch() {
           </Link>
 
           <Link
-            href="mailto:lourdenbaydal13@gmail.com"
+            href="mailto:lourden@test.com"
             aria-label="Email"
             className="flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity"
           >

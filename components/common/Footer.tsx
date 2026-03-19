@@ -26,7 +26,7 @@ export default function Footer() {
           <Facebook size={18} />
         </Link>
         <Link
-          href="mailto:lourdenbaydal13@gmail.com"
+          href="mailto:lourden@test.com"
           aria-label="Email"
           className="hover:text-[#EBF2D9] transition-colors"
         >
