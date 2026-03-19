@@ -2,19 +2,40 @@
 
 import { useState } from "react";
 import Section from "@/components/common/Section";
+import { z } from "zod";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const schema = z.object({
+    name: z.string().min(1, "Name is required"),
+    email: z.string().email("Invalid email"),
+    message: z.string().min(10, "Enter atleast 10 characters"),
+  });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const result = schema.safeParse(form);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.issues.forEach((err) => {
+        if (err.path[0]) fieldErrors[err.path[0] as string] = err.message;
+      });
+      setErrors(fieldErrors);
+      console.log(errors);
+      return;
+    }
+    setErrors({});
+    console.log(result.data);
+    return;
+  }
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  }
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    console.log(form);
   }
 
   const inputClass =
@@ -36,9 +57,13 @@ export default function ContactForm() {
               placeholder="Your name"
               value={form.name}
               onChange={handleChange}
-              required
               className={inputClass}
+              spellCheck={false}
+              autoComplete="off"
             />
+            {errors.name && (
+              <p className="text-red-400 text-xs">{errors.name}</p>
+            )}
           </div>
 
           <div className="flex flex-col gap-1.5">
@@ -48,13 +73,17 @@ export default function ContactForm() {
             <input
               id="email"
               name="email"
-              type="email"
+              type="text"
               placeholder="your@email.com"
               value={form.email}
               onChange={handleChange}
-              required
               className={inputClass}
+              spellCheck={false}
+              autoComplete="off"
             />
+            {errors.email && (
+              <p className="text-red-400 text-xs">{errors.email}</p>
+            )}
           </div>
 
           <div className="flex flex-col gap-1.5">
@@ -67,10 +96,12 @@ export default function ContactForm() {
               placeholder="What's on your mind?"
               value={form.message}
               onChange={handleChange}
-              required
               rows={5}
               className={`${inputClass} resize-none`}
             />
+            {errors.message && (
+              <p className="text-red-400 text-xs">{errors.message}</p>
+            )}
           </div>
 
           <button

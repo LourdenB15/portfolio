@@ -124,3 +124,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #101404 inset;
+  -webkit-text-fill-color: #ebf2d9;
+  caret-color: #ebf2d9;
+}
