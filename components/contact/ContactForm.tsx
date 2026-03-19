@@ -57,7 +57,7 @@ export default function ContactForm() {
               placeholder="Your name"
               value={form.name}
               onChange={handleChange}
-              className={inputClass}
+              className={`${inputClass} ${errors.name ? "border-red-400 focus:border-red-400" : ""}`}
               spellCheck={false}
               autoComplete="off"
             />
@@ -77,7 +77,7 @@ export default function ContactForm() {
               placeholder="your@email.com"
               value={form.email}
               onChange={handleChange}
-              className={inputClass}
+              className={`${inputClass} ${errors.email ? "border-red-400 focus:border-red-400" : ""}`}
               spellCheck={false}
               autoComplete="off"
             />
@@ -97,7 +97,7 @@ export default function ContactForm() {
               value={form.message}
               onChange={handleChange}
               rows={5}
-              className={`${inputClass} resize-none`}
+              className={`${inputClass} resize-none ${errors.email ? "border-red-400 focus:border-red-400" : ""}`}
             />
             {errors.message && (
               <p className="text-red-400 text-xs">{errors.message}</p>
