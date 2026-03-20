@@ -3,23 +3,26 @@
 import { useState } from "react";
 import Section from "@/components/common/Section";
 import { z } from "zod";
+import { sendEmail } from "@/app/actions/contact";
+import { toast } from "sonner";
+const schema = z.object({
+  name: z.string().trim().min(1, "Name is required"),
+  email: z.string().email("Invalid email"),
+  message: z.string().trim().min(10, "Enter atleast 10 characters"),
+});
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-
-  const schema = z.object({
-    name: z.string().min(1, "Name is required"),
-    email: z.string().email("Invalid email"),
-    message: z.string().min(10, "Enter atleast 10 characters"),
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
   });
-
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  function handleSubmit(e: React.FormEvent) {
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const result = schema.safeParse(form);
+    const result = schema.safeParse({ ...form, email: form.email.trim() });
     if (!result.success) {
-      const fieldErrors: Record<string, string> = {};
+      const fieldErrors: { [key: string]: string } = {};
       result.error.issues.forEach((err) => {
         if (err.path[0]) fieldErrors[err.path[0] as string] = err.message;
       });
@@ -28,7 +31,15 @@ export default function ContactForm() {
       return;
     }
     setErrors({});
-    console.log(result.data);
+    try {
+      await sendEmail(result.data);
+      setForm({ name: "", email: "", message: "" });
+      toast.success("Message sent successfully!", { position: "bottom-right" });
+    } catch {
+      toast.error("Failed to send message. Please try again.", {
+        position: "bottom-right",
+      });
+    }
     return;
   }
 
@@ -97,7 +108,7 @@ export default function ContactForm() {
               value={form.message}
               onChange={handleChange}
               rows={5}
-              className={`${inputClass} resize-none ${errors.email ? "border-red-400 focus:border-red-400" : ""}`}
+              className={`${inputClass} resize-none ${errors.message ? "border-red-400 focus:border-red-400" : ""}`}
             />
             {errors.message && (
               <p className="text-red-400 text-xs">{errors.message}</p>
