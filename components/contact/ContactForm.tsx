@@ -5,6 +5,7 @@ import Section from "@/components/common/Section";
 import { z } from "zod";
 import { sendEmail } from "@/app/actions/contact";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 const schema = z.object({
   name: z.string().trim().min(1, "Name is required"),
   email: z.string().email("Invalid email"),
@@ -17,6 +18,7 @@ export default function ContactForm() {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -32,6 +34,7 @@ export default function ContactForm() {
     }
     setErrors({});
     try {
+      setIsSubmitting(true);
       await sendEmail(result.data);
       setForm({ name: "", email: "", message: "" });
       toast.success("Message sent successfully!", { position: "bottom-right" });
@@ -39,6 +42,8 @@ export default function ContactForm() {
       toast.error("Failed to send message. Please try again.", {
         position: "bottom-right",
       });
+    } finally {
+      setIsSubmitting(false);
     }
     return;
   }
@@ -114,13 +119,12 @@ export default function ContactForm() {
               <p className="text-red-400 text-xs">{errors.message}</p>
             )}
           </div>
-
-          <button
-            type="submit"
-            className="border border-[#212807] hover:bg-[#212807] transition-colors px-6 py-2.5 rounded-lg text-sm mt-2 cursor-pointer"
+          <Button
+            className="border border-[#212807] hover:bg-[#212807] bg-inherit transition-colors px-6 py-2.5 rounded-lg text-sm mt-2 cursor-pointer"
+            disabled={isSubmitting}
           >
-            Send Message
-          </button>
+            {isSubmitting ? "Sending Message..." : "Send Message"}
+          </Button>
         </form>
       </div>
     </Section>
