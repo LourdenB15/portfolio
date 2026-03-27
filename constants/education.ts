@@ -1,4 +1,4 @@
-type schoolEntry = {
+export type schoolEntry = {
   id: number;
   schoolName: string;
   year: string;
