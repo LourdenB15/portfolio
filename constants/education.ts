@@ -38,3 +38,21 @@ export const EDUCATION: Education[] = [
     ],
   },
 ];
+
+type Certification = {
+  id: number;
+  title: string;
+  issuer: string;
+  hours: number;
+  date: string;
+};
+
+export const CERTIFICATIONS: Certification[] = [
+  {
+    id: 1,
+    title: "Creative Web Design",
+    issuer: "Call Center Academy",
+    hours: 102,
+    date: "May 16, 2024 - June 10, 2024",
+  },
+];
