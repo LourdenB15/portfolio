@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { EDUCATION } from "@/constants/education";
-import EducationLevel from "@/components/education/EducationLevel";
+import EducationLevel from "@/components/education/EducationLevelSection";
 
 export default async function EducationLevelPage({
   params,

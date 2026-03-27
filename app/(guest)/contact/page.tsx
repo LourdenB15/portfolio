@@ -1,5 +1,5 @@
-import GetInTouch from "@/components/contact/GetInTouch";
-import ContactForm from "@/components/contact/ContactForm";
+import GetInTouch from "@/components/contact/GetInTouchSection";
+import ContactForm from "@/components/contact/ContactFormSection";
 
 export default function ContactPage() {
   return (
