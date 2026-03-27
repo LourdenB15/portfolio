@@ -8,7 +8,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header>
+    <header className="sticky top-0 z-50 bg-[#101404]">
       <nav className="flex justify-between px-5 sm:px-10 md:px-16 py-5 border-b border-[#282C1D]">
         <Link className="text-3xl font-bold" href="/">
           Denious
@@ -30,7 +30,7 @@ export default function Header() {
       </nav>
 
       {open && (
-        <div className="sm:hidden flex flex-col px-5 sm:px-10 md:px-16 py-4 gap-4 border-b border-[#282C1D]">
+        <div className="sm:hidden absolute w-full flex flex-col px-5 py-4 gap-4 border-b border-[#282C1D] bg-[#101404]">
           <Link href="/" onClick={() => setOpen(false)}>
             About
           </Link>
