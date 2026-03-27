@@ -1,10 +1,8 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EDUCATION } from "@/constants/education";
-import { MoveLeft } from "lucide-react";
-import Section from "@/components/common/Section";
+import EducationLevel from "@/components/education/EducationLevel";
 
-export default async function EducationLevel({
+export default async function EducationLevelPage({
   params,
 }: {
   params: Promise<{ educationLevel: string }>;
@@ -17,32 +15,5 @@ export default async function EducationLevel({
 
   if (!entry) notFound();
 
-  return (
-    <>
-      <Section className="grow flex justify-center mt-8">
-        <div className="w-full max-w-md">
-          <Link
-            href="/"
-            className="text-sm mb-6 inline-block opacity-60 hover:opacity-100 duration-[200ms]"
-          >
-            <MoveLeft className="inline mr-2" /> Back to Home
-          </Link>
-          <div className="text-4xl font-bold text-center mb-5">
-            {entry.level}
-          </div>
-          <div className="flex flex-col gap-4">
-            {entry.school.map((school) => (
-              <div
-                key={school.id}
-                className="border border-[#212807] rounded-lg p-5"
-              >
-                <div className="font-bold mb-1">{school.schoolName}</div>
-                <div className="opacity-60">{school.year}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-    </>
-  );
+  return <EducationLevel level={entry.level} schools={entry.school} />;
 }
