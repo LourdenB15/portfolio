@@ -12,7 +12,7 @@ export default function SkillSection() {
   }
 
   return (
-    <Section className="grow">
+    <Section>
       <div className="text-4xl font-bold text-center mb-8">Skills</div>
       <div className="flex flex-col gap-6 max-w-2xl mx-auto">
         {SKILLS.map((skill) => (

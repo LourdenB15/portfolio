@@ -22,10 +22,10 @@ export default async function EducationLevel({
       <Section className="grow flex justify-center mt-8">
         <div className="w-full max-w-md">
           <Link
-            href="/education"
+            href="/"
             className="text-sm mb-6 inline-block opacity-60 hover:opacity-100 duration-[200ms]"
           >
-            <MoveLeft className="inline mr-2" /> Back to Education
+            <MoveLeft className="inline mr-2" /> Back to Home
           </Link>
           <div className="text-4xl font-bold text-center mb-5">
             {entry.level}

@@ -1,11 +1,12 @@
-import Link from "next/link";
-import { EDUCATION } from "@/constants/education";
 import Section from "@/components/common/Section";
-export default function EducationPage() {
+import { EDUCATION } from "@/constants/education";
+import Link from "next/link";
+
+export default function EducationSection() {
   return (
     <Section className="grow flex justify-center mt-8">
       <div>
-        <div className="text-4xl font-bold text-center mb-5">Education</div>
+        <div className="text-4xl font-bold text-center mb-8">Education</div>
         <div className="flex flex-col gap-5">
           {EDUCATION.map((level) => (
             <Link
