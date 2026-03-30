@@ -1,7 +1,7 @@
-import SkillSection from "@/components/home/SkillSection";
-import HeroSection from "@/components/home/HeroSection";
-import EducationSection from "@/components/home/EducationSection";
-import CertificationSection from "@/components/home/CertificationSection";
+import SkillSection from "@/components/features/home/SkillSection";
+import HeroSection from "@/components/features/home/HeroSection";
+import EducationSection from "@/components/features/home/EducationSection";
+import CertificationSection from "@/components/features/home/CertificationSection";
 export default function Home() {
   return (
     <>

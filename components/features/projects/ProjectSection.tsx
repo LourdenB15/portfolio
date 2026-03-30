@@ -9,7 +9,7 @@ import {
 import { Search } from "lucide-react";
 import { useState } from "react";
 import { Project, PROJECTS } from "@/constants/projects";
-import ProjectCard from "@/components/projects/ProjectCard";
+import ProjectCard from "@/components/common/ProjectCard";
 
 export default function ProjectSection() {
   const [input, setInput] = useState("");
