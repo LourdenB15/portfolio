@@ -55,7 +55,7 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full bg-transparent border border-[#212807] rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#EBF2D9]/40 transition-colors placeholder:opacity-40";
+    "w-full bg-transparent border border-border rounded-lg px-4 py-2.5 text-sm outline-none focus:border-foreground/40 transition-colors placeholder:opacity-40";
 
   return (
     <Section className="grow">
@@ -120,7 +120,7 @@ export default function ContactForm() {
             )}
           </div>
           <Button
-            className="border border-[#212807] hover:bg-[#212807] bg-inherit transition-colors px-6 py-2.5 rounded-lg text-sm mt-2 cursor-pointer"
+            className="border border-border text-foreground hover:bg-muted bg-inherit transition-colors px-6 py-2.5 rounded-lg text-sm mt-2 cursor-pointer"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Sending Message..." : "Send Message"}

@@ -23,7 +23,7 @@ export default function EducationLevel({ level, schools }: Props) {
           {schools.map((school) => (
             <div
               key={school.id}
-              className="border border-[#212807] rounded-lg p-5"
+              className="border border-border rounded-lg p-5"
             >
               <div className="font-bold mb-1">{school.schoolName}</div>
               <div className="opacity-60">{school.year}</div>

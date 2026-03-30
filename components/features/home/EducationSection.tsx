@@ -12,7 +12,8 @@ export default function EducationSection() {
             <Link
               href={`/education/${level.level.toLowerCase()}`}
               key={level.id}
-              className="cursor-pointer duration-[200ms] border border-[#212807] hover:bg-[#212807] rounded-lg p-5"
+              className="cursor-pointer duration-[200ms] border border-border hover:bg-muted
+ rounded-lg p-5"
             >
               <div className="mb-2 font-bold">{level.level}</div>
               {level.school.map((school, index) => (

@@ -23,10 +23,10 @@ export default function SkillSection() {
                 <span
                   key={item.name}
                   onClick={() => toggle(item.name)}
-                  className={`flex items-center gap-2 border border-[#212807] rounded-full px-4 py-1 text-sm cursor-pointer duration-200 ${
+                  className={`flex items-center gap-2 border border-border rounded-full px-4 py-1 text-sm cursor-pointer duration-200 ${
                     selected === item.name
-                      ? "bg-[#212807] text-[#EBF2D9]"
-                      : "hover:bg-[#212807]/50"
+                      ? "bg-muted text-foreground"
+                      : "hover:bg-muted/50"
                   }`}
                 >
                   {item.icon}

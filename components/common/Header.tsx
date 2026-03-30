@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-
+import { ModeToggle } from "@/components/common/ModeToggle";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#101404]">
-      <nav className="flex justify-between px-5 sm:px-10 md:px-16 py-5 border-b border-[#282C1D]">
+    <header className="sticky top-0 z-50 bg-background">
+      <nav className="flex justify-between px-5 sm:px-10 md:px-16 py-5 border-b border-border">
         <Link className="text-3xl font-bold" href="/">
           Denious
         </Link>
@@ -18,6 +18,7 @@ export default function Header() {
           <Link href="/">About</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/contact">Contact</Link>
+          <ModeToggle />
         </div>
 
         <button
@@ -30,7 +31,7 @@ export default function Header() {
       </nav>
 
       {open && (
-        <div className="sm:hidden absolute w-full flex flex-col px-5 py-4 gap-4 border-b border-[#282C1D] bg-[#101404]">
+        <div className="sm:hidden absolute w-full flex flex-col px-5 py-4 gap-4 border-b border-border bg-background">
           <Link href="/" onClick={() => setOpen(false)}>
             About
           </Link>

@@ -7,7 +7,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div
       key={project.id}
-      className="relative border border-[#212807] rounded-lg overflow-hidden flex flex-col hover:bg-[#212807]/40 transition-colors"
+      className="relative border border-border rounded-lg overflow-hidden flex flex-col hover:bg-muted/40 transition-colors"
     >
       <Link
         href={project.link}
@@ -34,7 +34,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="border border-[#212807] rounded-full px-3 py-0.5 text-xs"
+              className="border border-border rounded-full px-3 py-0.5 text-xs"
             >
               {tag}
             </span>

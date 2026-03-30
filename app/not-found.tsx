@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="text-xl">Page not found</div>
       <Link
         href="/"
-        className="border border-[#212807] hover:bg-[#212807] transition-colors px-6 py-2.5 rounded-lg text-sm"
+        className="border border-border hover:bg-muted transition-colors px-6 py-2.5 rounded-lg text-sm"
       >
         Go home
       </Link>
