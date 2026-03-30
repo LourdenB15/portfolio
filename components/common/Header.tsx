@@ -21,13 +21,18 @@ export default function Header() {
           <ModeToggle />
         </div>
 
-        <button
-          className="sm:hidden flex items-center cursor-pointer"
-          onClick={() => setOpen((prev) => !prev)}
+        <div
+          className="sm:hidden flex items-center gap-2"
           aria-label="Toggle menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <ModeToggle />
+          <button
+            className="cursor-pointer"
+            onClick={() => setOpen((prev) => !prev)}
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {open && (
