@@ -35,19 +35,21 @@ export default function Header() {
         </div>
       </nav>
 
-      {open && (
-        <div className="sm:hidden absolute w-full flex flex-col px-5 py-4 gap-4 border-b border-border bg-background">
-          <Link href="/" onClick={() => setOpen(false)}>
-            About
-          </Link>
-          <Link href="/projects" onClick={() => setOpen(false)}>
-            Projects
-          </Link>
-          <Link href="/contact" onClick={() => setOpen(false)}>
-            Contact
-          </Link>
-        </div>
-      )}
+      <div
+        className={`sm:hidden absolute w-full flex flex-col px-5 gap-4 border-b border-border bg-background overflow-hidden transition-all duration-300 ease-in-out ${
+          open ? "py-4 max-h-48 opacity-100" : "max-h-0 opacity-0 py-0"
+        }`}
+      >
+        <Link href="/" onClick={() => setOpen(false)}>
+          About
+        </Link>
+        <Link href="/projects" onClick={() => setOpen(false)}>
+          Projects
+        </Link>
+        <Link href="/contact" onClick={() => setOpen(false)}>
+          Contact
+        </Link>
+      </div>
     </header>
   );
 }
