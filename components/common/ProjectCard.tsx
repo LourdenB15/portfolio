@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { SiGithub } from "react-icons/si";
@@ -32,12 +34,15 @@ export default function ProjectCard({ project }: { project: Project }) {
 
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
-            <span
+            <Link
+              href={`/projects/category/${tag.toLowerCase()}`}
+              onClick={(e) => e.stopPropagation()}
               key={tag}
-              className="border border-border rounded-full px-3 py-0.5 text-xs"
             >
-              {tag}
-            </span>
+              <span className="border border-border rounded-full px-3 py-0.5 text-xs">
+                {tag}
+              </span>
+            </Link>
           ))}
         </div>
 
