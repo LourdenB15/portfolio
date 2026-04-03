@@ -55,13 +55,11 @@ export default function ProjectSection({
     <Section className="grow">
       <div className="flex flex-col max-w-5xl mx-auto">
         <div className="text-4xl font-bold text-center mb-8">Projects</div>
-        {activeTags.length > 0 && (
-          <div className="mb-6">
-            <span className="text-sm opacity-60">
-              Category: {activeTags.join(" + ")}
-            </span>
-          </div>
-        )}
+        <div className="mb-6">
+          <span className={`text-sm opacity-60 ${activeTags.length === 0 ? "invisible" : ""}`}>
+            Category: {activeTags.join(" + ")}
+          </span>
+        </div>
         <InputGroup className="md:max-w-xs self-end mb-6">
           <InputGroupInput
             placeholder="Search..."
