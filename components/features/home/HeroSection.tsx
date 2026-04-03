@@ -7,7 +7,7 @@ export default function HeroSection() {
       <div className="flex gap-5 flex-wrap justify-center">
         <div className="overflow-hidden rounded-lg basis-[300px] grow-1 max-w-md">
           <Image
-            src="/cscat.jpeg"
+            src="/lourden.jpeg"
             height={300}
             width={300}
             alt="meow meow"

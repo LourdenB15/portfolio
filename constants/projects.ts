@@ -5,7 +5,7 @@ export type Project = {
   image: string;
   tags: string[];
   link: string;
-  github: string;
+  github?: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -38,5 +38,23 @@ export const PROJECTS: Project[] = [
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://lourdenb15.github.io/odin-calculator/",
     github: "https://github.com/LourdenB15/odin-calculator",
+  },
+  {
+    id: 4,
+    name: "Movie Search",
+    description:
+      "A movie search app powered by the OMDb API. Search any title to instantly pull up details like the plot, IMDb rating, and more.",
+    image: "/movie-search.png",
+    tags: ["HTML", "CSS", "JavaScript", "API"],
+    link: "https://lourdenb15.github.io/Movie-Search/",
+  },
+  {
+    id: 5,
+    name: "SkyBridge Travels",
+    description:
+      "A hotel booking system for Cordova, Cebu. Search hotels, view room details, and book online",
+    image: "/skybridge-travels.png",
+    tags: ["React", "TailwindCSS", "Express", "Prisma", "API"],
+    link: "https://sky-bridge-travels102.vercel.app/",
   },
 ];
