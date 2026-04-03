@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { SiGithub } from "react-icons/si";
 import { Project } from "@/constants/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -45,15 +44,6 @@ export default function ProjectCard({ project }: { project: Project }) {
             </Link>
           ))}
         </div>
-
-        <Link
-          href={project.github}
-          target="_blank"
-          className="flex items-center gap-2 text-sm opacity-60 hover:opacity-100 transition-opacity mt-1 w-fit"
-        >
-          <SiGithub size={16} />
-          View code on GitHub
-        </Link>
       </div>
     </div>
   );
